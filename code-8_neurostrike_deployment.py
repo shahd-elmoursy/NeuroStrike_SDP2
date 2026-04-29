@@ -213,10 +213,6 @@ class NetworkDiscovery:
         hosts = self._arp_scan(subnet, iface)
 
         broker = "192.168.0.134"
-        '''for h in hosts:
-            if h != pi_ip and self._check_mqtt(h):
-                broker = h
-                break'''
 
         iot = [h for h in hosts if h != pi_ip and h != broker and not h.endswith(".1")]
 
